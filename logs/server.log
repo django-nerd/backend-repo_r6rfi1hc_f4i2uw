@@ -1,13 +1,36 @@
 INFO:     Will watch for changes in these directories: ['/home/workspace']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [182] using StatReload
-INFO:     Started server process [184]
+INFO:     Started reloader process [288] using StatReload
+INFO:     Started server process [290]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     172.20.0.1:44012 - "OPTIONS /api/hunters HTTP/1.1" 200 OK
-INFO:     172.20.0.1:44028 - "OPTIONS /api/hunters HTTP/1.1" 200 OK
-INFO:     172.20.0.1:44030 - "HEAD / HTTP/1.1" 405 Method Not Allowed
-INFO:     172.20.0.1:44012 - "GET /api/hunters HTTP/1.1" 500 Internal Server Error
-INFO:     172.20.0.1:44012 - "GET /api/hunters HTTP/1.1" 500 Internal Server Error
-INFO:     172.20.0.1:56694 - "GET /api/hunters HTTP/1.1" 500 Internal Server Error
-INFO:     172.20.0.1:56694 - "GET /api/hunters HTTP/1.1" 500 Internal Server Error
+INFO:     172.20.0.1:50736 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50736 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:50738 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:34884 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34884 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34910 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34910 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34926 - "GET /test HTTP/1.1" 200 OK
+INFO:     172.20.0.1:34926 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.20.0.1:51448 - "POST /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51448 - "OPTIONS /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51448 - "OPTIONS /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51448 - "OPTIONS /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51448 - "OPTIONS /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51454 - "GET /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51470 - "GET /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51454 - "GET /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51470 - "GET /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51494 - "GET /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51510 - "GET /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:51482 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:38404 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:38404 - "GET /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:38404 - "GET /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:38404 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:38404 - "GET /api/profile?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:38430 - "GET /api/quests?user_id=691f479a342c750439f4eac1 HTTP/1.1" 200 OK
+INFO:     172.20.0.1:48440 - "OPTIONS /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:48440 - "GET /api/hunters HTTP/1.1" 200 OK
+INFO:     172.20.0.1:48440 - "GET /api/hunters HTTP/1.1" 200 OK
