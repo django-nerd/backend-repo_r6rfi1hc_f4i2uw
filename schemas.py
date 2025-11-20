@@ -1,48 +1,53 @@
 """
-Database Schemas
+Database Schemas for Solo Leveling Fitness App
 
-Define your MongoDB collection schemas here using Pydantic models.
-These schemas are used for data validation in your application.
-
-Each Pydantic model represents a collection in your database.
-Model name is converted to lowercase for the collection name:
-- User -> "user" collection
-- Product -> "product" collection
-- BlogPost -> "blogs" collection
+Each Pydantic model represents a MongoDB collection. The collection name is the
+lowercase of the class name.
 """
-
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, List
+from datetime import datetime
 
-# Example schemas (replace with your own):
-
-class User(BaseModel):
+class Hunter(BaseModel):
     """
-    Users collection schema
-    Collection name: "user" (lowercase of class name)
+    Collection: "hunter"
+    Represents a user (Hunter) in the Solo Leveling inspired system
     """
-    name: str = Field(..., description="Full name")
-    email: str = Field(..., description="Email address")
-    address: str = Field(..., description="Address")
-    age: Optional[int] = Field(None, ge=0, le=120, description="Age in years")
-    is_active: bool = Field(True, description="Whether user is active")
+    name: str = Field(..., description="Display name of the hunter")
+    title: Optional[str] = Field(None, description="Optional title/rank nickname")
+    level: int = Field(1, ge=1, description="Current level")
+    exp: int = Field(0, ge=0, description="Current experience points")
+    streak: int = Field(0, ge=0, description="Daily check-in streak")
+    last_checkin: Optional[datetime] = Field(None, description="Last check-in timestamp")
 
-class Product(BaseModel):
+class Workout(BaseModel):
     """
-    Products collection schema
-    Collection name: "product" (lowercase of class name)
+    Collection: "workout"
+    A logged workout session awarding EXP
     """
-    title: str = Field(..., description="Product title")
-    description: Optional[str] = Field(None, description="Product description")
-    price: float = Field(..., ge=0, description="Price in dollars")
-    category: str = Field(..., description="Product category")
-    in_stock: bool = Field(True, description="Whether product is in stock")
+    user_id: str = Field(..., description="Hunter user id (stringified ObjectId)")
+    workout_type: str = Field(..., description="Type of workout, e.g., run, pushups, yoga")
+    minutes: int = Field(..., ge=1, le=300, description="Duration in minutes")
+    difficulty: str = Field("normal", description="easy | normal | hard")
+    exp_awarded: int = Field(0, ge=0, description="Exp awarded for this workout")
 
-# Add your own schemas here:
-# --------------------------------------------------
+class Quest(BaseModel):
+    """
+    Collection: "quest"
+    Daily quest generated per user per day
+    """
+    user_id: str = Field(...)
+    date: str = Field(..., description="YYYY-MM-DD for the quest day")
+    title: str = Field(..., description="Quest title")
+    description: Optional[str] = Field(None)
+    exp_reward: int = Field(50, ge=0)
+    completed: bool = Field(False)
 
-# Note: The Flames database viewer will automatically:
-# 1. Read these schemas from GET /schema endpoint
-# 2. Use them for document validation when creating/editing
-# 3. Handle all database operations (CRUD) directly
-# 4. You don't need to create any database endpoints!
+class Checkin(BaseModel):
+    """
+    Collection: "checkin"
+    Daily check-in records (for audit)
+    """
+    user_id: str = Field(...)
+    date: str = Field(..., description="YYYY-MM-DD for the check-in day")
+    streak_after: int = Field(..., ge=0)
